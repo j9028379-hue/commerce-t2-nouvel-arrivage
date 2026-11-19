@@ -116,8 +116,8 @@
       ],
       "operation": "coupe_recadrage",
       "zoom": [
-        1.065,
-        1.065
+        1.06,
+        1.06
       ]
     },
     {
@@ -179,7 +179,7 @@
       "operation": "coupe_detail",
       "zoom": [
         1.05,
-        1.15
+        1.06
       ]
     },
     {
@@ -195,8 +195,8 @@
       ],
       "operation": "coupe_recadrage",
       "zoom": [
-        1.22,
-        1.22
+        1.06,
+        1.06
       ]
     },
     {
@@ -214,27 +214,31 @@
       "couleur_sRGB": "#FFF7EC",
       "mode": "screen",
       "rayon_xy": [
-        0.22,
-        0.17
+        0.36,
+        0.42
       ],
       "centre_xy": [
         [
-          0.38,
-          0.48
+          -0.1,
+          0.5
         ],
         [
-          0.64,
-          0.4
+          1.1,
+          0.47
         ]
       ],
       "opacite": [
         [
           0,
-          0.78
+          0
         ],
         [
-          12,
-          0.58
+          11,
+          0.53
+        ],
+        [
+          34,
+          0.41
         ],
         [
           53,
@@ -251,14 +255,14 @@
       ],
       "images_t2": [
         420,
-        435
+        444
       ],
       "operation": "fondu_aligne_deux_echelles",
       "sortant": "dernière image de S2 ; centre du produit aligné",
       "entrant": "S3 en lecture normale",
       "zoom_sortant": [
-        1.22,
-        1.05
+        1.04,
+        1.0
       ],
       "alpha_entrant": [
         [
@@ -266,7 +270,7 @@
           0
         ],
         [
-          14,
+          23,
           1
         ]
       ]
@@ -285,8 +289,8 @@
       "operation": "surimpression_floue",
       "images_utilisees": "deux copies de S3 à la même image",
       "zoom_copie": [
-        1.18,
-        1
+        1.06,
+        1.0
       ],
       "sigma_max_px": 6,
       "opacite": [
@@ -402,5 +406,65 @@
         ]
       ]
     }
-  ]
+  ],
+  "revision_visuelle": "02 · plein cadre",
+  "cadrage": {
+    "mode": "remplir_sans_bandes",
+    "unite": "centre horizontal source normalisé, progression de scène de 0 à 1",
+    "trajectoires": [
+      [
+        [
+          0,
+          0.34
+        ],
+        [
+          0.6,
+          0.48
+        ],
+        [
+          1,
+          0.57
+        ]
+      ],
+      [
+        [
+          0,
+          0.54
+        ],
+        [
+          1,
+          0.59
+        ]
+      ],
+      [
+        [
+          0,
+          0.49
+        ],
+        [
+          0.55,
+          0.6
+        ],
+        [
+          1,
+          0.53
+        ]
+      ],
+      [
+        [
+          0,
+          0.46
+        ],
+        [
+          0.55,
+          0.57
+        ],
+        [
+          1,
+          0.56
+        ]
+      ]
+    ],
+    "zoom_max": 1.06
+  }
 }
