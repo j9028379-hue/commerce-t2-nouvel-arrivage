@@ -1,0 +1,42 @@
+[
+  {
+    "scene": "S1",
+    "url": "https://assets.mixkit.co/3xmw2y7fn64wz6zy1fk7pqnnfl20",
+    "id": 100872,
+    "page": "https://mixkit.co/free-stock-video/spinning-vinyl-record-100872/",
+    "licence": "https://mixkit.co/license/#videoFree",
+    "sha256": "505df99a9ebf56c694fd7380e815623b8426634744f080867eae359a8a920cec",
+    "debut_s": 0.35,
+    "centre_x": 0.5
+  },
+  {
+    "scene": "S2",
+    "url": "https://assets.mixkit.co/p4fm53aqnp3qaphhg7iztxf3jnne",
+    "id": 100874,
+    "page": "https://mixkit.co/free-stock-video/vinyl-record-spinning-100874/",
+    "licence": "https://mixkit.co/license/#videoFree",
+    "sha256": "895de3a3230581d7956a76791fa5a00bb5c6d89341f0d32b3e7426a0559df78d",
+    "debut_s": 0.6,
+    "centre_x": 0.54
+  },
+  {
+    "scene": "S3",
+    "url": "https://assets.mixkit.co/aa2blcliq6nk7mxnvmtj1rz3z4d8",
+    "id": 100875,
+    "page": "https://mixkit.co/free-stock-video/vinyl-record-playing-100875/",
+    "licence": "https://mixkit.co/license/#videoFree",
+    "sha256": "9f2615b0b000d9f267482e5ef811a4da5454c6be79d77be3d324f22d894ef761",
+    "debut_s": 1.15,
+    "centre_x": 0.55
+  },
+  {
+    "scene": "S4",
+    "url": "https://assets.mixkit.co/tm3kxwa8a7q8fuzvzlv8cz694g32",
+    "id": 100890,
+    "page": "https://mixkit.co/free-stock-video/static-tv-to-spinning-vinyl-reveal-100890/",
+    "licence": "https://mixkit.co/license/#videoFree",
+    "sha256": "06204521ca58ec9178b1b1d83f1a02e1edda0ce5a103df22707aa8de12859768",
+    "debut_s": 12.8,
+    "centre_x": 0.56
+  }
+]

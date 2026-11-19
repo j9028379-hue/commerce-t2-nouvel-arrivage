@@ -1,0 +1,34 @@
+name: COMMERCE-T2 · Premier film silencieux
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  film:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Installer les outils
+        run: |
+          pip install 'numpy<2.3' 'opencv-python-headless<4.13' pillow
+          command -v ffprobe && command -v ffmpeg || { sudo apt-get update -qq && sudo apt-get install -y ffmpeg; }
+          npm install --prefix "$RUNNER_TEMP/tools" --ignore-scripts --no-audit --no-fund puppeteer-core@23.11.1
+      - name: Vérifier quatre rushs et passer par le formulaire et les douze écrans
+        run: |
+          python render/inputs.py
+          python tools/construire.py
+          git diff --exit-code docs/index.html
+          NODE_PATH="$RUNNER_TEMP/tools/node_modules" node render/parcours.cjs
+      - name: Rendre les 900 images et contrôler le MP4 sans son
+        run: python render/film.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: COMMERCE-T2-silencieux
+          path: livraison/
+          if-no-files-found: error
