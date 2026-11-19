@@ -11,3 +11,7 @@ Après retour sur le lot : analyser les raccords retenus et leur faisabilité av
 ## Mise à jour — choix des transitions
 
 Le propriétaire a retenu les références **1 et 4** exclusivement. [Effets et fenêtres en JSON](reverse-engineering/effets.json) · [Rapport d'adaptation en quatre prises](reverse-engineering/REPORT.md). Les paramètres proposés documentent l'aspect à reconstruire ; ce ne sont pas des réglages propriétaires exportés. Étape actuelle : adaptation à valider, moteur non développé.
+
+## Parcours à examiner
+
+[Ouvrir le formulaire et les douze écrans](https://j9028379-hue.github.io/commerce-t2-nouvel-arrivage/) · [JSON des douze écrans](capture-guide/ecrans.json). Maquette de validation : chronomètres simulés, relecture facultative de fichiers locaux ; aucune capture caméra ni production de film. `python tools/construire.py` reconstruit la page autonome à partir des deux JSON.
