@@ -1,0 +1,47 @@
+{
+  "template_id": "COMMERCE-T2",
+  "reponses": {
+    "nom": "Sillon Studio",
+    "produit": "Platine vinyle rétro",
+    "prix": "48 000 F CFA",
+    "accroche": "Le rituel du vinyle",
+    "quartier": "Cadjèhoun, Cotonou",
+    "whatsapp": "+1 202 555 0168"
+  },
+  "captures": [
+    {
+      "scene": "S1",
+      "sha256": "505df99a9ebf56c694fd7380e815623b8426634744f080867eae359a8a920cec",
+      "valide": true
+    },
+    {
+      "scene": "S2",
+      "sha256": "895de3a3230581d7956a76791fa5a00bb5c6d89341f0d32b3e7426a0559df78d",
+      "valide": true
+    },
+    {
+      "scene": "S3",
+      "sha256": "9f2615b0b000d9f267482e5ef811a4da5454c6be79d77be3d324f22d894ef761",
+      "valide": true
+    },
+    {
+      "scene": "S4",
+      "sha256": "06204521ca58ec9178b1b1d83f1a02e1edda0ce5a103df22707aa8de12859768",
+      "valide": true
+    }
+  ],
+  "ecrans": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ]
+}

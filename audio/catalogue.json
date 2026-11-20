@@ -1,0 +1,72 @@
+{
+  "pack_version": "1.0.0",
+  "audio_profile": "afrobeat_arrivage_commerce",
+  "licence": "https://pixabay.com/service/license-summary/",
+  "approbation": "Les pistes 1–3 et Afrofire en 4 validées par le propriétaire. PEACE exclue.",
+  "pistes": [
+    {
+      "numero": 1,
+      "pixabay_id": 162190,
+      "titre": "Afro love 1 By Gis prod",
+      "artiste": "Gis_photography",
+      "page": "https://pixabay.com/music/afrobeat-afro-love-1-by-gis-prod-162190/",
+      "duree_s_affichee": 103,
+      "badge_IA_observe": false,
+      "content_id": "aucun badge observé sur la fiche consultée ; non garanti",
+      "licence_affichee": "Free for use under the Pixabay Content License",
+      "id": 162190,
+      "source_mp3": "https://cdn.pixabay.com/download/audio/2023/08/15/audio_19f1d61629.mp3?filename=gis_photography-afro-love-1-by-gis-prod-162190.mp3",
+      "sha256": "ff3330694bb31e2bed52aacd5cc64c1e6209def6eff50cb95eba1144d13c1c42",
+      "octets": 3297698,
+      "source_debut_s": 8
+    },
+    {
+      "numero": 2,
+      "pixabay_id": 303023,
+      "titre": "Ifunanya",
+      "artiste": "RoyaltyFreeBeats",
+      "page": "https://pixabay.com/music/afrobeat-afrobeat-gitaar-beat-energieke-highlife-afropop-type-beat-ifunanya-303023/",
+      "duree_s_affichee": 158,
+      "badge_IA_observe": true,
+      "content_id": "aucun badge observé sur la fiche consultée ; non garanti",
+      "licence_affichee": "Free for use under the Pixabay Content License",
+      "id": 303023,
+      "source_mp3": "https://cdn.pixabay.com/download/audio/2025/02/19/audio_c324c3a889.mp3?filename=royaltyfreebeats-afrobeat-gitaar-beat-energieke-highlife-afropop-type-beat-ifunanya-303023.mp3",
+      "sha256": "5d05749fe4407b8d6b798030b26bf7818b640f9facca4edbe8d4b287d3ea2fdf",
+      "octets": 5044767,
+      "source_debut_s": 12
+    },
+    {
+      "numero": 3,
+      "pixabay_id": 260353,
+      "titre": "Afrobeat Sunset Groove",
+      "artiste": "Ovrsoull",
+      "page": "https://pixabay.com/music/afrobeat-afrobeat-sunset-groove-260353/",
+      "duree_s_affichee": 135,
+      "badge_IA_observe": true,
+      "content_id": "aucun badge observé sur la fiche consultée ; non garanti",
+      "licence_affichee": "Free for use under the Pixabay Content License",
+      "id": 260353,
+      "source_mp3": "https://cdn.pixabay.com/download/audio/2024/11/06/audio_3ed34f2704.mp3?filename=ovrsoull-afrobeat-sunset-groove-260353.mp3",
+      "sha256": "a17d5e9d6aa358d3acbd762e24287a0546907b0c55c9944eb77142474488f450",
+      "octets": 4306944,
+      "source_debut_s": 9
+    },
+    {
+      "numero": 4,
+      "pixabay_id": 300338,
+      "titre": "Afrofire",
+      "artiste": "DPStudioMusic",
+      "page": "https://pixabay.com/music/afrobeat-afrofire-300338/",
+      "badge_IA_observe": true,
+      "content_id": "pas de badge observé, non garanti",
+      "duree_s_affichee": 240,
+      "licence_affichee": "Free for use under the Pixabay Content License",
+      "id": 300338,
+      "source_mp3": "https://cdn.pixabay.com/download/audio/2025/02/12/audio_bf52f1c5ad.mp3?filename=dpstudiomusic-afrofire-300338.mp3",
+      "sha256": "24e9606e14e4708e8c8ffa3a6a97429dbfc95049d388481392d72b971e932c61",
+      "octets": 7680768,
+      "source_debut_s": 16
+    }
+  ]
+}

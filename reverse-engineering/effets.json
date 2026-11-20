@@ -466,5 +466,7 @@
       ]
     ],
     "zoom_max": 1.06
-  }
+  },
+  "version": "1.0.0",
+  "audio_profile": "afrobeat_arrivage_commerce"
 }

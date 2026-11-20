@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0.0",
+  "entries": [
+    {
+      "template_id": "COMMERCE-T2",
+      "version": "1.0.0",
+      "audio_profile": "afrobeat_arrivage_commerce",
+      "contrat": "reverse-engineering/effets.json",
+      "secteur": "Commerce",
+      "titre": "Nouvel arrivage",
+      "paquet": "COMMERCE-T2-1.0.0.zip",
+      "ota_implemented": false,
+      "android_verified": false
+    }
+  ]
+}

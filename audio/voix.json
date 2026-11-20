@@ -1,0 +1,68 @@
+{
+  "identite": "voice-03, masculine, deuxième duel",
+  "langue": "fr",
+  "synthetique": true,
+  "vitesse": 1,
+  "reference": "https://github.com/j9028379-hue/vitrine-video-t1-pilot/blob/c656510ab81d31d413dc4dfd74b42671532cd978/config/T1_special_menu_voice_mix_v1_0_0.json",
+  "master_sha256": "1a02b6504513f2773c10a628b42148338cb76b0ad6887ebc671fc044fa6a587a",
+  "job_reference": "golden/job.json",
+  "clips": [
+    {
+      "scene": "S1",
+      "start_s": 1.2,
+      "texte": "Chez Sillon Studio, découvre notre platine vinyle rétro.",
+      "source": "audio/voix/S1.wav",
+      "sha256": "beac327770b32a43b70b432b1e19181510e0f5c32a659c7ada202040041cd487"
+    },
+    {
+      "scene": "S2",
+      "start_s": 6.8,
+      "texte": "Le rituel du vinyle. La platine est à quarante-huit mille francs CFA.",
+      "source": "audio/voix/S2.wav",
+      "sha256": "d2958ba1218b0f02bacb91d9429a3473a440051b2cdbd95cee20965ead4e7a41",
+      "pause_position_s": 1.55,
+      "pause_ajoutee_s": 1.35
+    },
+    {
+      "scene": "S3",
+      "start_s": 14.7,
+      "texte": "Pose le disque. Abaisse doucement le bras. Et laisse-le tourner.",
+      "source": "audio/voix/S3.wav",
+      "sha256": "8181237f3fd60cb7aee723b703a65b6da74a980a54beefde642ba130f0a8ed1b"
+    },
+    {
+      "scene": "S4",
+      "start_s": 21.8,
+      "texte": "Retrouve Sillon Studio à Cadjèhoun, à Cotonou. Pour commander ta platine, écris-nous sur WhatsApp.",
+      "source": "audio/voix/S4.wav",
+      "sha256": "7f0960001090361261ee27da01f7efae0243d228fff253251737e9592d3be719",
+      "pause_position_s": 3.15,
+      "pause_ajoutee_s": 0.37
+    }
+  ],
+  "mix": {
+    "music_open_gain_db": -3.0,
+    "music_under_voice_gain_db": -10.0,
+    "duck_depth_db": -7.0,
+    "duck_attack_ms": 120,
+    "duck_release_ms": 450,
+    "duck_attack_curve": "linear_db",
+    "duck_release_curve": "linear_db",
+    "voice_gain_db": 0.0,
+    "sfx": "none",
+    "master_target_lufs": -16.0,
+    "master_true_peak_dbtp_max": -2.0,
+    "delivery_audio": "stereo 48 kHz"
+  },
+  "gates": {
+    "exact_music_variant_count": 4,
+    "duration_tolerance_s": 0.001,
+    "integrated_lufs_min": -16.5,
+    "integrated_lufs_max": -15.5,
+    "wav_true_peak_dbtp_max": -1.9,
+    "aac_true_peak_dbtp_max": -1.0,
+    "minimum_active_speech_to_music_db": 4.0,
+    "clipped_sample_count_max": 0,
+    "human_listening_required_for_creative_approval": true
+  }
+}

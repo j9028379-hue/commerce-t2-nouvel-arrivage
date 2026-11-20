@@ -1,0 +1,53 @@
+{
+  "type": "object",
+  "properties": {
+    "template_id": {
+      "const": "COMMERCE-T2"
+    },
+    "statut": {
+      "type": "string"
+    },
+    "format_propose": {
+      "const": {
+        "width": 720,
+        "height": 1280,
+        "fps": 30,
+        "frames": 900
+      }
+    },
+    "conventions": {
+      "type": "object"
+    },
+    "scenes": {
+      "type": "array"
+    },
+    "effets": {
+      "type": "array"
+    },
+    "revision_visuelle": {
+      "type": "string"
+    },
+    "cadrage": {
+      "type": "object"
+    },
+    "version": {
+      "const": "1.0.0"
+    },
+    "audio_profile": {
+      "const": "afrobeat_arrivage_commerce"
+    }
+  },
+  "required": [
+    "template_id",
+    "statut",
+    "format_propose",
+    "conventions",
+    "scenes",
+    "effets",
+    "revision_visuelle",
+    "cadrage",
+    "version",
+    "audio_profile"
+  ],
+  "additionalProperties": false
+}

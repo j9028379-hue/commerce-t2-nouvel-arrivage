@@ -1,0 +1,70 @@
+name: COMMERCE-T2 · Voix, quatre musiques et conformité
+on: workflow_dispatch
+concurrency:
+  group: commerce-t2-autoplay
+  cancel-in-progress: false
+permissions:
+  contents: read
+jobs:
+  film:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Outils et état persistant
+        run: |
+          pip install 'numpy<2.3' 'opencv-python-headless<4.13' pillow jsonschema
+          command -v ffprobe && command -v ffmpeg || { sudo apt-get update -qq && sudo apt-get install -y ffmpeg; }
+          npm install --prefix "$RUNNER_TEMP/tools" --ignore-scripts --no-audit --no-fund puppeteer-core@23.11.1
+          mkdir -p work
+          git fetch --quiet --depth=1 origin refs/heads/state/commerce-autoplay:refs/rotation/previous
+          git show refs/rotation/previous:autoplay/etat.json > work/etat.json
+          curl -fsSL --retry 3 https://github.com/j9028379-hue/commerce-t2-nouvel-arrivage/releases/download/essai-silencieux-02/COMMERCE-T2-Nouvel-arrivage.mp4 -o work/master.mp4
+      - name: Parcours réel, contrats, rotation et Worker en lecture seule
+        run: |
+          python render/inputs.py
+          python tools/construire.py && git diff --exit-code docs/index.html
+          NODE_PATH="$RUNNER_TEMP/tools/node_modules" node render/parcours.cjs
+          node shared/cloudflare-control-plane/test.mjs
+          (cd shared/cloudflare-control-plane && npx --yes wrangler@4.45.0 deploy --dry-run --outdir "$RUNNER_TEMP/worker")
+          python qc/preparer.py
+      - name: Rejouer et comparer les 900 images au master approuvé
+        run: python render/film.py && python qc/reference.py
+      - name: Voix synthétique française et quatre mixes contrôlés sur le master approuvé
+        run: |
+          python audio/mixer.py work/master.mp4 livraison/ecoutes
+          python qc/choix.py
+          python package/livrer.py build livraison/COMMERCE-T2-1.0.0.zip
+          python package/livrer.py verify livraison/COMMERCE-T2-1.0.0.zip
+      - uses: actions/upload-artifact@v4
+        with:
+          name: T2-voix-afrobeat
+          path: livraison/
+          if-no-files-found: error
+  rotation:
+    needs: film
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+      actions: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@v4
+        with:
+          name: T2-voix-afrobeat
+          path: ${{ runner.temp }}/verification
+      - name: Confirmer la piste avec contrôle de concurrence
+        env:
+          GH_TOKEN: ${{ github.token }}
+        working-directory: ${{ runner.temp }}/verification
+        run: python "$GITHUB_WORKSPACE/qc/confirmer.py"
