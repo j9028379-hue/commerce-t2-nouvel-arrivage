@@ -46,7 +46,7 @@ jobs:
           python qc/guard.py MARCHAND python qc/marchand.py
           python qc/choix.py
           python package/livrer.py build livraison/COMMERCE-T2-1.0.0.zip
-          python package/livrer.py verify livraison/COMMERCE-T2-1.0.0.zip
+          python qc/paquet.py livraison/COMMERCE-T2-1.0.0.zip
       - name: Sauvegarder le diagnostic en cas de refus
         if: failure()
         uses: actions/upload-artifact@v4
