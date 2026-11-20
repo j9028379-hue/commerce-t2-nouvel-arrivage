@@ -56,7 +56,7 @@ Proposition éditoriale pour validation, pas encore une interface caméra. Un m�
 
 ## 07 · Guide A — MONTRE COMMENT ON L'UTILISE
 
-**Ce que tu vas filmer** · Montre comment on se sert de ton article. Fais le geste normalement, comme tu le ferais devant un client.
+**Ce que tu vas filmer** · Tu as 7 secondes. Montre comment tu utilises ton article : filme seulement le geste le plus important et son résultat.
 
 **À filmer** · Le geste principal ; ton article pendant son utilisation ; ce qui se passe quand on s'en sert.
 
