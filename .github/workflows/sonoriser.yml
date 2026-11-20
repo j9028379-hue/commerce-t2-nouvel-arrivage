@@ -35,15 +35,22 @@ jobs:
           NODE_PATH="$RUNNER_TEMP/tools/node_modules" node render/parcours.cjs
           node shared/cloudflare-control-plane/test.mjs
           (cd shared/cloudflare-control-plane && npx --yes wrangler@4.45.0 deploy --dry-run --outdir "$RUNNER_TEMP/worker")
-          python qc/preparer.py
+          python qc/guard.py CONTRAT python qc/preparer.py
       - name: Rejouer et comparer les 900 images au master approuvé
         run: python render/film.py && python qc/reference.py
       - name: Voix synthétique française et quatre mixes contrôlés sur le master approuvé
         run: |
-          python audio/mixer.py work/master.mp4 livraison/ecoutes
+          python qc/guard.py MIXAGE python audio/mixer.py work/master.mp4 livraison/ecoutes
           python qc/choix.py
           python package/livrer.py build livraison/COMMERCE-T2-1.0.0.zip
           python package/livrer.py verify livraison/COMMERCE-T2-1.0.0.zip
+      - name: Sauvegarder le diagnostic en cas de refus
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: diagnostic-audio
+          path: livraison/RenderError.json
+          if-no-files-found: ignore
       - uses: actions/upload-artifact@v4
         with:
           name: T2-voix-afrobeat

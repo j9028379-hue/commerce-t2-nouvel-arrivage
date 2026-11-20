@@ -11,7 +11,7 @@ def vh(p):return subprocess.check_output([F,'-v','error','-i',str(p),'-map','0:v
 def stem():
  cfg=I(D/'voix.json');v=np.zeros((30*R,2),dtype=np.float32)
  for c,end in zip(cfg['clips'],[6,14,21,30]):
-  p=D.parent/c['source'];assert H(p)==c['sha256'];a=decode(p);li,tp=level(a);a*=db(min(-20-li,-3-tp))
+  p=D.parent/c['source'];assert H(p)==c['sha256'];a=decode(p).copy();li,tp=level(a);a*=db(min(-20-li,-3-tp))
   if 'pause_position_s' in c:
    cut=round(c['pause_position_s']*R);assert np.max(abs(a[cut-120:cut+120]))<.04;a=np.concatenate((a[:cut],np.zeros((round(c['pause_ajoutee_s']*R),2)),a[cut:]))
   i=round(c['start_s']*R);assert i+len(a)<end*R;v[i:i+len(a)]=a
