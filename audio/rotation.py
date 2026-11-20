@@ -1,9 +1,8 @@
 import hashlib
 
 def choisir(ids,job,precedente=None,demande=None):
-    if len(ids)!=4 or len(set(ids))!=4 or not job or (precedente is not None and precedente not in ids): raise ValueError('État ou catalogue invalide')
-    pool=[i for i in ids if i!=precedente]
-    if demande is not None:
-        if demande not in pool:raise ValueError('Piste non autorisée ou identique au dernier succès')
-        return demande
-    return pool[int.from_bytes(hashlib.sha256(job.encode()).digest()[:8],'big')%len(pool)]
+ last,requested,job_id=precedente,demande,job
+ if not job_id or len(ids)!=4 or len(set(ids))!=4 or (last is not None and last not in ids):raise ValueError('Catalogue ou état de rotation invalide')
+ suivant=ids[0] if last is None else ids[(ids.index(last)+1)%4]
+ if requested is not None and requested!=suivant:raise ValueError('Seule la prochaine piste du cycle est autorisée')
+ return suivant

@@ -25,3 +25,6 @@ Le Worker commun (`shared/cloudflare-control-plane/`) lit le catalogue : GET `/v
 **[Paquet et audit du deuxième rendu](https://github.com/j9028379-hue/commerce-t2-nouvel-arrivage/releases/tag/commerce-t2-v1.0.0)** · [preuves de rotation et de mixage](qc/preuves/).
 
 [Comparaison fonctionnelle à Commerce-T1](qc/Parite-T1.md) · [validation du film sonore](approvals/validation.md).
+
+## Migration du service de génération — phase rotation
+La règle active de choix pour les nouvelles livraisons est le cycle strict 1 → 2 → 3 → 4 → 1, par gabarit, à partir du dernier succès, sans saut de piste. Cette règle remplace les descriptions de sélection antérieures. Cette étape ne publie aucun nouveau média, ne migre pas les masters et ne constitue pas un déploiement R2.
