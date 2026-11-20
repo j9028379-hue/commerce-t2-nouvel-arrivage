@@ -1,0 +1,58 @@
+{
+  "canon": {
+    "template_id": "COMMERCE-T2",
+    "version": "1.0.0",
+    "audio_profile": "afrobeat_arrivage_commerce",
+    "contrat": "reverse-engineering/effets.json",
+    "secteur": "Commerce",
+    "titre": "Nouvel arrivage",
+    "paquet": "COMMERCE-T2-1.0.0.zip",
+    "ota_implemented": false,
+    "android_verified": false
+  },
+  "reference": "P1@c656510 ; Commerce-T1@186e46a",
+  "schemas": true,
+  "mutations_refusees": 6,
+  "decisions_simulees": 10000,
+  "parcours": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "reference_visuelle_sha256": "1a02b6504513f2773c10a628b42148338cb76b0ad6887ebc671fc044fa6a587a",
+  "worker": "handlers lecture seule + Wrangler dry-run",
+  "non_certifie": [
+    "Android/caméra matérielle",
+    "OTA signé, installation et rollback",
+    "Cloudflare de production",
+    "validation humaine du mix final"
+  ],
+  "comparaison_900_images": {
+    "max_mae_sur_miniature": 0.3697916666666667,
+    "seuil": 1.5,
+    "master_utilise_dans_le_mix": "fichier public approuvé, pas sa reconstruction"
+  },
+  "contre_epreuve_marchande": {
+    "reponses_distinctes": true,
+    "prix": "₦7,625",
+    "audio": "signal technique issu de la deuxième prise, pas de voix de démo",
+    "echec_ne_modifie_pas_etat": true,
+    "resultat": {
+      "status": "COMPLETED",
+      "template_id": "COMMERCE-T2",
+      "run_id": "controle-second-commerce",
+      "sha256": "2a59ee25f6af6325e781d4b78e973b4514a1037a210684aaf8f765c58c47e201",
+      "output": "mix/03-Ovrsoull.mp4",
+      "music_id": 260353
+    }
+  }
+}

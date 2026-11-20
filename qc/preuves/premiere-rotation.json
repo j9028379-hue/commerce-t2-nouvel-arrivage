@@ -1,0 +1,14 @@
+{
+  "avant": {
+    "last_success": null
+  },
+  "apres": {
+    "last_success": 300338,
+    "run_id": "44689717195",
+    "render_sha256": "6040163a1d466b01d7752762b33dacc7b727d4e3edad0451677fac5c45528d6a"
+  },
+  "numero": 4,
+  "titre": "Afrofire",
+  "commit": "bc97abe34a8c2ccc6e9e0547a1d9d7adbb57fa15",
+  "choix_manuel": false
+}

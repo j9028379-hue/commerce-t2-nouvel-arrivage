@@ -1,0 +1,16 @@
+{
+  "avant": {
+    "last_success": 300338,
+    "run_id": "44689717195",
+    "render_sha256": "6040163a1d466b01d7752762b33dacc7b727d4e3edad0451677fac5c45528d6a"
+  },
+  "apres": {
+    "last_success": 162190,
+    "run_id": "44691013116",
+    "render_sha256": "ce2b042e5de266dba75e5ae82bff000b1e9967e05b3c7c98cb4f178d4c4df7dd"
+  },
+  "numero": 1,
+  "titre": "Afro love 1 By Gis prod",
+  "commit": "1ee872f66b1a739c221dc6fbc7f3b12dea95a5ec",
+  "choix_manuel": false
+}
