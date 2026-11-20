@@ -1,0 +1,23 @@
+name: Audit du lien site → montage (sans avancer la rotation)
+on: workflow_dispatch
+permissions:
+  contents: read
+jobs:
+  contrat:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: |
+          python tools/construire.py && git diff --exit-code docs/index.html
+          python render/inputs.py
+          npm install --prefix "$RUNNER_TEMP/tools" --ignore-scripts --no-audit --no-fund puppeteer-core@23.11.1
+          NODE_PATH="$RUNNER_TEMP/tools/node_modules" node render/parcours.cjs
+          python -m pip install jsonschema
+          python - <<'PY'
+          import json,jsonschema
+          load=lambda f:json.load(open(f))
+          j=load('livraison/job.json');jsonschema.validate(j,load('schemas/render-job.json'));assert j==load('golden/job.json')
+          PY
