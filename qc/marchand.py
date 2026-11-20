@@ -1,0 +1,8 @@
+from pathlib import Path as P
+import json,subprocess as sp,tempfile,hashlib,sys
+sys.path.insert(0,str(P('render').resolve()));from marchand import run,J
+with tempfile.TemporaryDirectory() as td:
+ q=P(td);job=J('golden/job.json');job['reponses'].update(nom='Contrôle second commerce',produit='Article témoin',prix='₦7,625',accroche='Message témoin');
+ for c,t,dur in zip(job['captures'],J('render/demo/rushs.json'),[6,8,7,9]):
+  f=q/(c['scene']+'.mp4');args=['ffmpeg','-v','error','-ss',str(t['debut_s']),'-i',str(P('work')/f.name)];args+=['-f','lavfi','-i','sine=frequency=415:sample_rate=48000','-map','0:v','-map','1:a','-c:a','aac'] if c['scene']=='S2' else ['-an'];sp.run(args+['-t',str(dur),'-vf','fps=30','-c:v','libx264','-threads','2','-preset','ultrafast',str(f)],check=True);c['sha256']=hashlib.sha256(f.read_bytes()).hexdigest()
+ p=q/'job.json';p.write_text(json.dumps(job));state=q/'rotation.json';r=run(q,q/'merchant',state,P('work/music-cache'),'controle-second-commerce');assert r['status']=='COMPLETED',r;assert J(q/'merchant/controle.json')['textes_commerciaux'][1]==['Message témoin','₦7,625'];assert J(q/'merchant/mix/controle-mixes.json')['versions'][0]['rapport_voix_musique_db']>=4;old=state.read_bytes();del job['reponses']['accroche'];p.write_text(json.dumps(job));assert run(q,q/'erreur',state,P('work/music-cache'),'contre-exemple')['status']=='FAILED' and state.read_bytes()==old;report=P('livraison/cq-architecture.json');cq=J(report);cq['contre_epreuve_marchande']={'reponses_distinctes':True,'prix':'₦7,625','audio':'signal technique issu de la deuxième prise, pas de voix de démo','echec_ne_modifie_pas_etat':True,'resultat':r};report.write_text(json.dumps(cq,ensure_ascii=False,indent=2))

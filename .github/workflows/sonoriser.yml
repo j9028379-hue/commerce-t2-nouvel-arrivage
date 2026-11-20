@@ -40,7 +40,10 @@ jobs:
         run: python render/film.py && python qc/reference.py
       - name: Voix synthétique française et quatre mixes contrôlés sur le master approuvé
         run: |
+          python audio/telecharger.py
+          export COMMERCE_MUSIC_CACHE="$GITHUB_WORKSPACE/work/music-cache"
           python qc/guard.py MIXAGE python audio/mixer.py work/master.mp4 livraison/ecoutes
+          python qc/guard.py MARCHAND python qc/marchand.py
           python qc/choix.py
           python package/livrer.py build livraison/COMMERCE-T2-1.0.0.zip
           python package/livrer.py verify livraison/COMMERCE-T2-1.0.0.zip
