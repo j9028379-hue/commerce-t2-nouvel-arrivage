@@ -1,0 +1,108 @@
+{
+  "version_manifeste": 1,
+  "gabarit": "T2",
+  "template_id": "COMMERCE-T2",
+  "archive": {
+    "nom": "T2-assets.zip",
+    "sha256": "0b6bb1e6ced048b715bc0522fe2ad52cbbbddee43fad11d3c996eadcec837660"
+  },
+  "pistes": [
+    {
+      "numero": 1,
+      "audio_id": 162190,
+      "fichier_archive": "01.mp3",
+      "nom_cache": "162190.mp3",
+      "sha256": "ff3330694bb31e2bed52aacd5cc64c1e6209def6eff50cb95eba1144d13c1c42",
+      "octets": 3297698,
+      "source_debut_s": 8,
+      "duree_extrait_s": 30
+    },
+    {
+      "numero": 2,
+      "audio_id": 303023,
+      "fichier_archive": "02.mp3",
+      "nom_cache": "303023.mp3",
+      "sha256": "5d05749fe4407b8d6b798030b26bf7818b640f9facca4edbe8d4b287d3ea2fdf",
+      "octets": 5044767,
+      "source_debut_s": 12,
+      "duree_extrait_s": 30
+    },
+    {
+      "numero": 3,
+      "audio_id": 260353,
+      "fichier_archive": "03.mp3",
+      "nom_cache": "260353.mp3",
+      "sha256": "a17d5e9d6aa358d3acbd762e24287a0546907b0c55c9944eb77142474488f450",
+      "octets": 4306944,
+      "source_debut_s": 9,
+      "duree_extrait_s": 30
+    },
+    {
+      "numero": 4,
+      "audio_id": 300338,
+      "fichier_archive": "04.mp3",
+      "nom_cache": "300338.mp3",
+      "sha256": "24e9606e14e4708e8c8ffa3a6a97429dbfc95049d388481392d72b971e932c61",
+      "octets": 7680768,
+      "source_debut_s": 16,
+      "duree_extrait_s": 30
+    }
+  ],
+  "rotation": {
+    "ordre": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "apres_4": 1,
+    "depart_sans_historique": 1,
+    "reference": "dernière livraison réussie du gabarit"
+  },
+  "montage": {
+    "duree_s": 30,
+    "sorties_s": [
+      [
+        0,
+        6
+      ],
+      [
+        6,
+        14
+      ],
+      [
+        14,
+        21
+      ],
+      [
+        21,
+        30
+      ]
+    ],
+    "debut_musique_film_s": 0,
+    "source_voix_marchand": "audio des prises, aucune voix de démonstration",
+    "echantillonnage_hz": 48000,
+    "canaux": 2,
+    "vitesse": 1,
+    "musique_normalisation_lufs": -18,
+    "voix_cible_lufs": -20,
+    "gain_musique_hors_voix_db": -3,
+    "gain_musique_sous_voix_db": -10,
+    "anticipation_ms": 120,
+    "relachement_ms": 450,
+    "fondu_entree_ms": 25,
+    "fondu_sortie_ms": 350,
+    "cible_mix_lufs": -16,
+    "limite_pic_aac_dbtp": -1,
+    "codec_audio": "AAC",
+    "debit_kbps": 192,
+    "ecart_min_voix_musique_db": 4
+  },
+  "integration": {
+    "entree_cache": "--cache",
+    "fichier_cache": "<audio_id>.mp3",
+    "moteur_marchand": "render/marchand.py + audio/mixer.py",
+    "commit_moteur_reference": "d15f581cd991da26b54cdda00648ae9b8f831aeb",
+    "sortie_client": "vidéo MP4 mixée uniquement"
+  }
+}
